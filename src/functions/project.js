@@ -4,6 +4,14 @@ function Project (name, description){
     this.name = name
     this.description = description
     this.todos = []
+    
+}
+
+function Todo (name, description, dueDate, priority){
+    this.name = name
+    this.description = description
+    this.dueDate = dueDate
+    this.priority = priority
 }
 
 let defaultProject = new Project('default', 'this is a default project! feel free to add any todos of yur choice')
