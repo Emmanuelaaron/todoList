@@ -4,5 +4,5 @@ import 'bootstrap';
 import './scss/index.scss'
 import body from './dom/body'
 
-body()
+// body()
 document.body.appendChild(body())
