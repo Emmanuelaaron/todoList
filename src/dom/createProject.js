@@ -1,5 +1,5 @@
 import { projectsArray, Project } from '../functions/project'
-import myProjects from '../dom/projects'
+import myProjects from './projects'
 const newproject = () => {
     const myForm = document.createElement('form')
     myForm.classList.add('form-inline')
@@ -17,10 +17,9 @@ const newproject = () => {
         const title = myInput.value
         let myprojects = document.getElementById('projects')
         let form = newproject()
-        const newProject = Project(title)
+        const newProject = new Project(title)
         const heading = document.createElement('h1')
 
-        console.log(title)
         projectsArray.push(newProject)
         let myProjectsArr = myProjects(projectsArray)
         myprojects.innerHTML= ''
@@ -29,7 +28,6 @@ const newproject = () => {
         myprojects.appendChild(myProjectsArr)
         myprojects.appendChild(form)
 
-        console.log(projectsArray)
     })
     return myForm
 

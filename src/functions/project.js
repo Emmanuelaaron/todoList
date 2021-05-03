@@ -1,9 +1,14 @@
 let projectsArray = []
 
-const Project = (name) => ({
-    name
-    
-})
+function Project (name){
+    this.name = name
+    this.todos = [{
+        name: 'running',
+        description: 'running is cool',
+        dueDate: '09/08/2019',
+        priority: 'high'
+    }]
+}
 
 function Todo (name, description, dueDate, priority){
     this.name = name
@@ -12,7 +17,8 @@ function Todo (name, description, dueDate, priority){
     this.priority = priority
 }
 
-let defaultProject =  Project('default')
+let defaultProject = new Project('default')
+console.log(defaultProject.todos)
 projectsArray.push(defaultProject)
 
 
