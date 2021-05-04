@@ -18,7 +18,6 @@ function Todo (name, description, dueDate, priority){
 }
 
 let defaultProject = new Project('default')
-console.log(defaultProject.todos)
 projectsArray.push(defaultProject)
 
 

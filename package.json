@@ -22,9 +22,13 @@
   },
   "homepage": "https://github.com/Emmanuelaaron/todoList#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.4",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^5.3.1",
     "postcss": "^8.2.12",
     "postcss-loader": "~3.0.0",

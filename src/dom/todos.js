@@ -2,7 +2,7 @@ const myTodos = (todos) => {
     const divContainer = document.createElement('div')
     let mytodos = document.getElementById('todos')
     mytodos.innerHTML = ''
-    const todosHeading = document.createElement('h1')
+    const todosHeading = document.createElement('h2')
     todosHeading.innerHTML = 'My Todos'
     mytodos.appendChild(todosHeading)
     todos.forEach(todo => {
