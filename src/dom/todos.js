@@ -4,6 +4,7 @@ import todoForm from './createTodoForm';
 
 const myTodos = (todos) => {
   const divContainer = document.createElement('div');
+  divContainer.classList.add('mt-4');
   const mytodos = document.getElementById('todos');
   mytodos.innerHTML = '';
 
@@ -26,9 +27,27 @@ const myTodos = (todos) => {
   mytodos.appendChild(formTodos);
 
   todos.forEach((todo) => {
-    const pro = document.createElement('p');
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('d-flex', 'align-content-center', 'col-7', 'justify-content-between', 'border-bottom', 'align-items-center');
+
+    const pro = document.createElement('a');
     pro.innerHTML = todo.name;
-    divContainer.appendChild(pro);
+
+    const dueDate = document.createElement('a');
+    dueDate.innerHTML = todo.dueDate;
+
+    const linkTodo = document.createElement('a');
+    linkTodo.setAttribute('href', '#');
+    linkTodo.innerHTML = 'Display';
+    linkTodo.addEventListener('click', (e) => {
+      e.preventDefault();
+    // todoForm();
+    });
+
+    todoDiv.appendChild(pro);
+    todoDiv.appendChild(dueDate);
+    todoDiv.appendChild(linkTodo);
+    divContainer.appendChild(todoDiv);
   });
   mytodos.appendChild(divContainer);
 };
