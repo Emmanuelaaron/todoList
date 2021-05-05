@@ -1,5 +1,5 @@
 import { projectsArray, Project } from '../functions/project';
-import myProjects from './projects';
+import { myProjects } from './projects';
 
 const newproject = () => {
   const myForm = document.createElement('form');

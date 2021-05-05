@@ -1,5 +1,5 @@
 import newproject from './createProject';
-import myProjects from './projects';
+import { myProjects } from './projects';
 import { projectsArray } from '../functions/project';
 import todoForm from './createTodoForm';
 
