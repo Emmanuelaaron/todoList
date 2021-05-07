@@ -11,16 +11,17 @@
 
 ## Live Demo
 
-[Live Demo Link](#)
+[Live Demo Link](https://emmanuelaaron.github.io/todoList/dist/)
 
 
 ## Getting Started
 - Clone this repo on your local machine
 - Navigate to this project on your machine
 - On your command line on the root directory of your project, run these commands.
-```npm install```
 
-```npm start```
+- ```npm install```
+- ```npm run build```
+- ```npm start```
 
 - Open ```localhost:8080``` in your browser
 
