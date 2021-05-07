@@ -77,7 +77,7 @@ const displayTodo = (todo) => {
   min.addEventListener('click', (e) => {
     e.preventDefault();
     displayDiv.classList.add('d-none');
-    const display = document.getElementById('display');
+    const display = document.getElementById(`${todo.name}display`);
     display.classList.add('d-block');
   });
 
@@ -88,4 +88,20 @@ const displayTodo = (todo) => {
   return displayDiv;
 };
 
-export { todoForm, displayTodo };
+const deleteTodo = (todo) => {
+  projectsArray.forEach((project) => {
+    if (project.name === projectname) {
+      const index = project.todos.indexOf(todo);
+      project.todos.splice(index, 1);
+    }
+  });
+};
+
+const refreshTodos = () => {
+  const mytodos = document.getElementById('todos');
+  mytodos.innerHTML = '';
+};
+
+export {
+  todoForm, displayTodo, deleteTodo, refreshTodos,
+};

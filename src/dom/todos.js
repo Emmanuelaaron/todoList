@@ -1,6 +1,8 @@
 /* eslint-disable import/no-cycle */
 
-import { todoForm, displayTodo } from './createTodoForm';
+import {
+  todoForm, displayTodo, deleteTodo, refreshTodos,
+} from './createTodoForm';
 
 const myTodos = (todos) => {
   const divContainer = document.createElement('div');
@@ -42,7 +44,7 @@ const myTodos = (todos) => {
     linkTodo.setAttribute('href', '#');
     linkTodo.classList.add();
     linkTodo.innerHTML = 'Display';
-    linkTodo.id = 'display';
+    linkTodo.id = `${todo.name}display`;
     linkTodo.addEventListener('click', (e) => {
       e.preventDefault();
       linkTodo.classList.add('d-none');
@@ -50,9 +52,25 @@ const myTodos = (todos) => {
       todoDiv.appendChild(display);
     });
 
+    const brk = document.createElement('br');
+
+    const todoDelete = document.createElement('a');
+    todoDelete.innerHTML = 'Delete';
+    todoDelete.classList.add('text-danger');
+    todoDelete.addEventListener('click', (e) => {
+      e.preventDefault();
+      deleteTodo(todo);
+      refreshTodos();
+      myTodos(todos);
+    });
+    // todoDelete.id = `${todo.name}display`;
+
     todoDiv.appendChild(pro);
     todoDiv.appendChild(dueDate);
     todoDiv.appendChild(linkTodo);
+    todoDiv.appendChild(brk);
+    todoDiv.appendChild(todoDelete);
+
     divContainer.appendChild(todoDiv);
   });
   mytodos.appendChild(divContainer);
