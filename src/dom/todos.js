@@ -3,9 +3,11 @@
 import {
   todoForm, displayTodo, deleteTodo, refreshTodos,
 } from './createTodoForm';
+import editTodoForm from './editForm';
 
 const myTodos = (todos) => {
   const divContainer = document.createElement('div');
+  divContainer.id = 'bigDiv';
   divContainer.classList.add('mt-4');
   const mytodos = document.getElementById('todos');
   mytodos.innerHTML = '';
@@ -31,6 +33,7 @@ const myTodos = (todos) => {
   todos.forEach((todo) => {
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('border', 'pl-5', 'rounded', 'mb-3');
+    // todoDiv.id = `${todo.name}big`
 
     const pro = document.createElement('div');
     pro.classList.add('text-decoration-none', 'text-dark');
@@ -54,6 +57,8 @@ const myTodos = (todos) => {
 
     const brk = document.createElement('br');
 
+    const brek = document.createElement('br');
+
     const todoDelete = document.createElement('a');
     todoDelete.innerHTML = 'Delete';
     todoDelete.classList.add('text-danger');
@@ -63,12 +68,23 @@ const myTodos = (todos) => {
       refreshTodos();
       myTodos(todos);
     });
-    // todoDelete.id = `${todo.name}display`;
+
+    const todoEdit = document.createElement('a');
+    todoEdit.innerHTML = 'Edit';
+    todoEdit.classList.add('text-dan');
+    todoEdit.addEventListener('click', (e) => {
+      e.preventDefault();
+      editTodoForm(todo);
+      const disappear = document.getElementById('bigDiv');
+      disappear.innerHTML = '';
+    });
 
     todoDiv.appendChild(pro);
     todoDiv.appendChild(dueDate);
     todoDiv.appendChild(linkTodo);
     todoDiv.appendChild(brk);
+    todoDiv.appendChild(todoEdit);
+    todoDiv.appendChild(brek);
     todoDiv.appendChild(todoDelete);
 
     divContainer.appendChild(todoDiv);
