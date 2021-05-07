@@ -58,4 +58,34 @@ const todoForm = () => {
   formInput.appendChild(form);
 };
 
-export default todoForm;
+const displayTodo = (todo) => {
+  const displayDiv = document.createElement('div');
+  displayDiv.classList.add('col-12');
+
+  const description = document.createElement('div');
+  description.classList.add('col-12', 'text-decoration-none', 'text-dark');
+  description.innerHTML = `Description:- ${todo.description}`;
+
+  const priority = document.createElement('div');
+  priority.classList.add('col-12', 'text-decoration-none', 'text-dark');
+  priority.innerHTML = `priority:- ${todo.priority}`;
+
+  const min = document.createElement('a');
+  min.setAttribute('href', '#');
+  min.classList.add();
+  min.innerHTML = 'Minimize';
+  min.addEventListener('click', (e) => {
+    e.preventDefault();
+    displayDiv.classList.add('d-none');
+    const display = document.getElementById('display');
+    display.classList.add('d-block');
+  });
+
+  displayDiv.appendChild(description);
+  displayDiv.appendChild(priority);
+  displayDiv.appendChild(min);
+
+  return displayDiv;
+};
+
+export { todoForm, displayTodo };

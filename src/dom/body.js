@@ -1,7 +1,7 @@
 import newproject from './createProject';
 import { myProjects } from './projects';
 import { projectsArray } from '../functions/project';
-import todoForm from './createTodoForm';
+import { todoForm } from './createTodoForm';
 
 const body = () => {
   const form = newproject();
