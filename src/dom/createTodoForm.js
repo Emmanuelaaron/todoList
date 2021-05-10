@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 
-import { Todo, projectsArray } from '../functions/project';
+import { projectsArray } from '../functions/project';
+import Todo from '../functions/todo';
 import { projectname, AddTodoToProject, projectTodos } from './projects';
 
 const todoForm = () => {
