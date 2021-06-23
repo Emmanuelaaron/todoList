@@ -23,6 +23,11 @@
 - ```npm run build```
 - ```npm start```
 
+## Testing
+- Test the project using the test below
+ ```npm test```
+- All tests should be passing
+
 - Open ```localhost:8080``` in your browser
 
 
