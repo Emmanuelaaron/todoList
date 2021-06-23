@@ -45,7 +45,7 @@ const todoForm = () => {
     const description = descInput.value;
     const priority = select.value;
     const dueDate = dueDateInput.value;
-    const newTodo =  Todo(name, description, dueDate, priority);
+    const newTodo = Todo(name, description, dueDate, priority);
     AddTodoToProject(projectsArray, projectname, newTodo);
     projectTodos(projectsArray, projectname);
   });
