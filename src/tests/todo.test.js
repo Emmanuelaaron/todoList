@@ -16,4 +16,8 @@ describe('Module Todo', () => {
   it('Get priority from toDo object', () => {
     expect(todo('name', 'description', '01/02/2022', 'high').priority).toBe('high');
   });
+
+  it('fields undefined if not provided', () => {
+    expect(todo().title).toBe(undefined);
+  });
 });
