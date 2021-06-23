@@ -33,7 +33,6 @@ const myTodos = (todos) => {
   todos.forEach((todo) => {
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('border', 'pl-5', 'rounded', 'mb-3');
-    // todoDiv.id = `${todo.name}big`
 
     const pro = document.createElement('div');
     pro.classList.add('text-decoration-none', 'text-dark');
