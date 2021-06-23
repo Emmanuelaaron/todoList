@@ -11,6 +11,12 @@
     "scss": "node-sass --watch scss -o css",
     "start": "webpack serve"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Emmanuelaaron/todoList.git"
@@ -31,6 +37,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^5.3.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
     "postcss": "^8.2.12",
     "postcss-loader": "~3.0.0",
@@ -51,7 +58,9 @@
     "autoprefixer": "^9.0.0",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "jsdom": "^16.4.0",
     "lodash": "^4.17.21",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^3.1.2"
   }
 }
